@@ -1,0 +1,241 @@
+<meta charset="UTF-8">
+<title>Jogo do Dev</title>
+<script>
+
+	function pulaLinha() {
+		
+		document.write("<br><br>");
+		
+	}
+
+	function mostratxt(fraseescrita) {
+
+		document.write(fraseescrita);
+		pulaLinha();
+	}
+
+
+	function limpaPrompt() {
+		outraLingu = null;
+		outraTec = null;
+	}
+
+	//REMOVI A FUNCTION confirmarMais para baixo
+
+	
+
+	// REMOVI A FUNCTION PARA ABAIXO
+
+	function seDigitarFront() {
+
+		alert("As linguagens de programação Front-End são aquelas utilizadas na criação de interfaces, ou seja, das partes de uma página com as quais o usuário pode interagir e executar ações. Atualmente, há dezenas de opções desse tipo de ferramenta, que podem variar de acordo com suas funcionalidades. Agora que você já conhece as principais linguagens de programação Front-End e as ferramentas complementares para a criação de interfaces, siga estudando...");
+	}
+
+
+	confirm("Bem vindo ao Jogo do Dev! Deseja prosseguir?");
+	
+	mostratxt("Iniciou seus estudos em Dev")
+
+	function primeiraEscolha(){
+		var areaSeguir = parseInt(prompt("Você deseja seguir para área de Front-End ou para Back-End? Digite " + 1 + " para FRONT e " + 2 + " para BACK."))
+		if (areaSeguir == 1) {
+
+		mostratxt("Você decidiu começar a estudar Front-End...")
+		}	
+
+		if (areaSeguir == 2) {
+
+			mostratxt("Você decidiu começar a estudar Front-End...")
+		}
+
+		if(areaSeguir == 0 || areaSeguir > 2){
+			alert('Invalido');
+			primeiraEscolha();
+		}
+	}
+
+   	primeiraEscolha();
+
+  	
+   	function segundaEscolha(){
+
+	
+		var ling1 = parseInt(prompt("Você deseja aprender React ou aprender Vue? Digite " + 1 + " para React," + 2 + " para Vue."))
+	
+		if (ling1 == 1) {
+				
+			mostratxt("Você começou a estudar React...")
+
+		} if (ling1 == 2) {
+
+			mostratxt("Você começou a estudar Vue..")
+		}
+
+		if(ling1 == 0 || ling1 > 2){
+			alert('Invalido');
+			segundaEscolha();
+		}
+	}
+
+	segundaEscolha();
+
+
+	function terceiraEscolha(){
+		let ling2 = parseInt(prompt("Você deseja aprender C# ou Java? Digite " + 1 + " para C#," + 2 + " para Java."))
+	
+		  if (ling2 == 1) {
+
+		  	mostratxt("Você começou a estudar C#...")
+		  }
+
+		  if (ling2 == 2) {
+
+		  	mostratxt("Você começou a estudar Java...")
+		  }
+
+		  if(ling2 == 0 || ling2 > 2){
+			alert('Invalido');
+			terceiraEscolha();
+		}
+	}
+
+	terceiraEscolha()
+
+	function quartaEscolha(){
+		var decisao = parseInt(prompt("Você deseja continuar se especializando na área escolhida ou se desenvolver para se tornar Fullstack? Digite" + 1 + "para ESPECIALIZAR e " + 2 + " para FULLSTACK."));
+	
+		if (decisao == 1) {
+
+			alert("Muito bom! A melhor coisa é sabermos tudo sobre uma linguagem se nos interessa tanto, ao invés de tentarmos aprender tudo e por fim não saber nada..")
+		}
+
+		if (decisao == 2) {
+
+			alert("Com grandes poderes vem grandes responsabilidades! Você está pronto para se dedicar bastante e passar horas estudando, pelo que parece!")
+		}
+
+		if(decisao == 0 || decisao > 2){
+			alert('Invalido');
+			quartaEscolha();
+		}
+	}
+ 
+	
+
+
+	quartaEscolha();
+
+
+	
+	// AQUI ESTÁ ERRADO 
+	/*if (tecnologiasAprender == "html" || "css" || "java" || "vue") {
+		alert("As linguagens de programação Front-End são aquelas utilizadas na criação de interfaces, ou seja, das partes de uma página com as quais o usuário pode interagir e executar ações. Atualmente, há dezenas de opções desse tipo de ferramenta, que podem variar de acordo com suas funcionalidades. Agora que você já conhece as principais linguagens de programação Front-End e as ferramentas complementares para a criação de interfaces, siga estudando...");
+	}
+	*/
+
+	// AQUI ESTÁ O CORRETO, MONTEI UMA FUNÇÃO E NA LINHA 112 CHAMEI ELE NA RECURSIVA PARA REINICIAR EM CASO DE VALOR DIGITADO NAO VÁLIDO
+
+	function quintaEscolha(){
+		var tecnologiasAprender = prompt("Quais são as tecnologias nas quais você gostaria de se especializar ou aprender?")
+		if(tecnologiasAprender){
+			if (tecnologiasAprender == "html" || tecnologiasAprender == "css" || tecnologiasAprender == "java" || tecnologiasAprender == "vue") {
+				confirmarMais();// CHAMANDO A FUNÇÃO PARA IR PARA PROXIMA PERGUNTA
+				
+			}
+			else{
+				alert(tecnologiasAprender + " é uma linguagem inválida")
+				quintaEscolha();
+			}
+
+			
+
+			if(tecnologiasAprender == null){
+				// SAIDA DO LAÇO DE REPETIÇÃO
+				mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+			}
+
+		}
+		else{
+			mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+		}
+
+
+		
+
+	}
+
+	quintaEscolha();
+
+
+	
+
+	function confirmarMais() {
+		var outraTec = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Clique em cancelar caso nãoooooo.");
+		
+		if(outraTec){
+			if (outraTec == "html" || outraTec == "css" || outraTec == "java" || outraTec == "vue") {
+				qualOutra();// CHAMANDO A FUNÇÃO DENTRA DA PROPRIA FUNÇÃO
+				
+			}
+			else{
+				alert(outraTec + " é uma linguagem inválida")
+				confirmarMais()
+			}
+
+			
+
+			if(outraTec == null){
+				// SAIDA DO LAÇO DE REPETIÇÃO
+				mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+			}
+
+		}
+		else{
+			mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+		}
+		
+	}
+
+	
+
+
+	function qualOutra() {
+
+		var outraLingu = prompt("Qual outra tecnologia você gostaria de aprender?");
+
+		if(outraLingu){
+			if (outraLingu == "html" || outraLingu == "css" || outraLingu == "java" || outraLingu == "vue") {
+				qualOutra();// CHAMANDO A FUNÇÃO DENTRA DA PROPRIA FUNÇÃO
+				
+			}
+			else{
+				alert(outraLingu + " é uma linguagem inválida")
+				qualOutra()()
+			}
+
+			
+
+			if(outraLingu == null){
+				// SAIDA DO LAÇO DE REPETIÇÃO
+				mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+			}
+		}
+		// SAIDA ANTES DE ENTRAR NO LAÇO DE REPETIÇÃO
+		else{
+			mostratxt("Muito bom! Você brincou um pouco nesse jogo, agora siga seus sonhos e vá estudar de verdade!");
+		}
+
+		
+	}
+
+	
+	
+
+
+	
+ 	
+
+	
+
+</script>
+
